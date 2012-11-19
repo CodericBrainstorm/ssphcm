@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -f [NC,OR]
+RewriteCond %{REQUEST_FILENAME} -d [NC]
+RewriteRule .* - [L]
+RewriteRule ^([a-z]+([^/]*)+).html$ view/$1.php [L]
+RewriteRule ^([a-z]+)/([a-z]+)/([a-z0-9]*)$ controler/$1.php?evento=$2&codigo=$3 [L]
+RewriteRule ^([a-z]+)/([a-z]+)/([a-z0-9]*).html$ view/$1.php?evento=$2&codigo=$3 [L]
